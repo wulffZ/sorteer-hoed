@@ -5,10 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <ul>
-        {% for item in items %}
-            <li>{{ item.name }}</li>
-        {% endfor %}
-    </ul>
+{% for question in questions %}
+    {{ question.question }}
+{% endfor %}
 </body>
 </html>

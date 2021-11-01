@@ -7,7 +7,8 @@ from website import db
 def home_page():
     return render_template("index.html")
 
-@app.route('/hoi')
-def hoi():
-    items = Answers.query.all()
-    return render_template('hoi.html', items=items)
+@app.route('/question/<question_id>')
+def question(question_id):
+    kwargs = {'id': question_id}
+    questions = Questions.query.filter_by(**kwargs)
+    return render_template("question.html", questions=questions)
