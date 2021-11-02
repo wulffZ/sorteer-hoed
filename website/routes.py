@@ -12,7 +12,7 @@ def question(question_id):
     questions = database.get_current_question()
     answers = database.get_current_answers()
 
-    return render_template("question.html", questions=questions, answers=answers)
+    return render_template("question.html", questions=questions, answers=answers, question_id=question_id)
 
 @app.route('/question/<question_id>/process', methods=['POST'])
 def process_question(question_id):

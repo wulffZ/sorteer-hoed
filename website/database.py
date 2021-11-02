@@ -13,7 +13,6 @@ class Database(object):
                                 f"WHERE questions.id = {self.question_id}")
 
         question = self.connection.fetchall()
-        # self.connection.close()
         return question
 
     def get_current_answers(self):
@@ -25,7 +24,6 @@ class Database(object):
             f"GROUP BY answers.id")
 
         answers = self.connection.fetchall()
-        # self.connection.close()
         return answers
 
     def get_points(self):
