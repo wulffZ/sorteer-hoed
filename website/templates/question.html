@@ -38,6 +38,7 @@
                                               name="answer"/>{{ answer[1] }}</label>
                                 <br>
                             {% endfor %}
+                            <input type="submit" name="submit" class="btn">
                         </div>
                     </form>
                 </div>
@@ -49,7 +50,7 @@
                     <img class="img-fluid" src="{{ url_for('static', filename='hufflepuff.png') }}"/>
                 </div>
                 <div class="col-sm-12 text-center">
-                    <a href="/question/">
+                    <a href="/question/1">
                         <button type="button" class="btn btn-warning btn-lg mt-2">
                             Start!
                         </button>

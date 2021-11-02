@@ -30,6 +30,7 @@ class Database(object):
         self.connection.execute(
             f"SELECT * "
             f"FROM points "
+            f"LEFT JOIN categories ON categories.id = points.category_id "
             f"WHERE points.answer_id = {self.answer_id} AND points.question_id = {self.question_id}")
         data = self.connection.fetchall()
         return data
