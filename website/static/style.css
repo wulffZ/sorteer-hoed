@@ -1,0 +1,17 @@
+button {
+    background-image: url('paper_texture.png');
+    background-size: cover;
+}
+
+#question-col {
+    font-size: 35px;
+}
+
+.card {
+    border-color: orange;
+}
+
+.card-title {
+    font-size: 32px;
+}
+
