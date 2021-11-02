@@ -10,12 +10,13 @@ class Categories(db.Model):
     __tablename__ = "categories"
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
     name = db.Column(db.String(length=100), nullable=False, unique=True)
+    description = db.Column(db.TEXT(), nullable=False)
 
 
 class Answers(db.Model):
     __tablename__ = "answers"
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
-    name = db.Column(db.String(length=100), nullable=False, unique=True)
+    answer = db.Column(db.String(length=100), nullable=False, unique=True)
 
 
 class Points(db.Model):

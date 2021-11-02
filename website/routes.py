@@ -10,5 +10,10 @@ def home_page():
 @app.route('/question/<question_id>')
 def question(question_id):
     kwargs = {'id': question_id}
-    questions = Questions.query.filter_by(**kwargs)
+    questions = Points.query\
+        .join(Questions, Questions.id == Points.question_id)\
+        .join(Answers, Answers.id == Points.answer_id)\
+        .join(Categories, Categories.id == Points.category_id)\
+        .filter_by(**kwargs)
+
     return render_template("question.html", questions=questions)
