@@ -1,10 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="static/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Noto+Serif+Display' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Noto Serif Display';font-size: 22px;
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-    <h1>MOGGUH</h1>
+<body style="background-image: url('static/background.jpg'); background-size: auto; background-repeat: no-repeat;">
+    <div class="container-fluid">
+         <div class="row m-5">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img class="img-fluid" src="{{url_for('static', filename='hufflepuff.png')}}"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>
+                            <b>
+                            "Misschien hoor je bij Huffelpuf,
+                            Vind je hard werken oké,
+                            Huffelpuffers blinken uit door trouw,
+                            En hebben geduld voor twee."
+                            </b>
+                        </h4>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-6">
+                        <img class="img-fluid" src="{{url_for('static', filename='gryffindor.png')}}"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>
+                            <b>
+                            "Misschien hoor je bij Griffoendor,
+                            Bekend om zijn dapperheid,
+                            Ja, ridderlijkheid en durf en lef,
+                            Is wat Griffoendor onderscheidt."
+                            </b>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <img class="rounded mx-auto d-block" style="width: 55%" src="{{url_for('static', filename='sorting_hat.png')}}"/>
+                <div class="col-sm-12 text-center">
+                    <a href="/question">
+                        <button type="button" class="btn btn-warning btn-lg mt-2">
+                        Start!
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4 class="">
+                            <b>
+                            "En bij het wijze Ravenklauw,
+                            Vinden mensen met verstand,
+                            Die geleerd en bij de pinken zijn,
+                            Altijd wel een geestverwant."
+                            </b>
+                        </h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="img-fluid" src="{{url_for('static', filename='ravenclaw.png')}}"/>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-6">
+                        <h4 class="">
+                            <b>
+                            "Misschien voel je je pas werkelijk thuis,
+                            Als je naam bij Zwadderich prijkt,
+                            Die sluwe lui schuwen echt niets,
+                            Als hun doel maar wordt bereikt."
+                            </b>
+                        </h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="img-fluid" src="{{url_for('static', filename='slytherin.png')}}"/>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
 </body>
 </html>
