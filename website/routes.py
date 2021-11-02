@@ -1,19 +1,19 @@
 from website import app
 from flask import render_template, redirect, url_for, flash
-from website.models import Questions, Categories, Points, Answers
-from website import db
+from .database import Database
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home_page():
     return render_template("index.html")
 
-@app.route('/question/<question_id>')
+@app.route('/question/<question_id>', methods=['GET'])
 def question(question_id):
-    kwargs = {'id': question_id}
-    questions = Points.query\
-        .join(Questions, Questions.id == Points.question_id)\
-        .join(Answers, Answers.id == Points.answer_id)\
-        .join(Categories, Categories.id == Points.category_id)\
-        .filter_by(**kwargs)
+    database = Database(question_id, '')
+    questions = database.get_current_question()
+    answers = database.get_current_answers()
 
-    return render_template("question.html", questions=questions)
+    return render_template("question.html", questions=questions, answers=answers)
+
+@app.route('/question/<question_id>/process', methods=['POST'])
+def process_question(question_id):
+    pass

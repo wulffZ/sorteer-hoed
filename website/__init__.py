@@ -1,10 +1,14 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+# from flask_sqlalchemy import SQLAlchemy
+# from flask_migrate import Migrate
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///website.db'
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_PORT'] = 3306
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'challenge_week'
+db = MySQL(app)
 
 from website import routes

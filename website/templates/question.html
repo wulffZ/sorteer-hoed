@@ -5,11 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+<br>
 {% for question in questions %}
-    {{ question.question }}
-    {{ question.answer }}
-    {{ question.category }}
-    {{ question.points }}
+    {{ question }}
+{% endfor %}
+
+{% for answer in answers %}
+    {{ answer }}
 {% endfor %}
 </body>
 </html>
