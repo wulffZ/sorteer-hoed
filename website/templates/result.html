@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-image: url({{url_for('static', filename='background_white.png')}}); background-size: auto; background-repeat: no-repeat;">
+<body style="background-image: url({{ url_for('static', filename='background_white.png') }}); background-size: auto; background-repeat: no-repeat;">
 <div class="container">
     <div class="row m-4">
         <div class="col-sm-6">
@@ -31,16 +31,19 @@
                     <h2>Bedankt!</h2>
                 </div>
                 <div class="col-sm-12">
-                    <p>De studierichting informatie die het beste bij je past is: </p>
-                    <p>Meer weten? bezoek deze <a href="https://www.hsleiden.nl/informatica" target="_blank">pagina</a></p>
+                    <p>De studierichting informatie die het beste bij je past is: {{ category[1] }}</p>
+                    <p>Meer weten? bezoek deze <a href="https://www.hsleiden.nl/informatica" target="_blank">pagina</a>
+                    </p>
                 </div>
             </div>
             <button type="button" class="btn btn-warning btn-lg ml-4">
-                            Nog een keer!
-                </button>
+                Nog een keer!
+            </button>
+            <a href="/">
                 <button type="button" class="btn btn-warning btn-lg ml-4">
-                            Hoofdmenu
+                    Hoofdmenu
                 </button>
+            </a>
         </div>
         <div class="col-sm-6">
             <div class="row ml-5">
@@ -52,23 +55,13 @@
         <div class="col-sm-12">
             <div class="row m-4">
                 <h2>Over ravenclaw.</h2>
-                <p>Ravenklauw representeert het element lucht, en om die reden zijn ook de afdelingskleuren gekozen; <br> blauw en brons staan respectievelijk voor de lucht en adelaarsveren, wat beiden met het element lucht te maken heeft.
+                <p>Ravenklauw representeert het element lucht, en om die reden zijn ook de afdelingskleuren gekozen;
+                    <br> blauw en brons staan respectievelijk voor de lucht en adelaarsveren, wat beiden met het element
+                    lucht te maken heeft.
                     <br>De zandloper met afdelingspunten bevat blauwe saffieren. </p>
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
-        $("input:checkbox").on('click', function () {
-            var $box = $(this);
-            if ($box.is(":checked")) {
-                var group = "input:checkbox[name='" + $box.attr("name") + "']";
-                $(group).prop("checked", false);
-                $box.prop("checked", true);
-            } else {
-                $box.prop("checked", false);
-            }
-        });
-    </script>
+</div>
 </body>
 </html>
