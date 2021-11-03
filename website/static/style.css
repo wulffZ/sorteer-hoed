@@ -17,4 +17,22 @@
     font-size: 32px;
 }
 
+.secret {
+    position: absolute;
+    top: 15%;
+    left: 43%;
+    background-color: #0b4908;
+}
 
+.diary {
+    width: 5vw;
+    position: absolute;
+    top: 80%;
+    left: 47%;
+}
+
+.terug {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}

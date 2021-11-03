@@ -11,6 +11,10 @@ def home_page():
     question_answers.clear()
     return render_template("index.html")
 
+@app.route('/chamber_of_secrets', methods=['GET'])
+def secrets():
+    return render_template("secret.html")
+
 
 @app.route('/question/<question_id>', methods=['GET'])
 def question(question_id):
