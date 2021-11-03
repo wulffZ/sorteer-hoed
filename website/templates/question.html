@@ -38,18 +38,16 @@
                                               name="answer"/>{{ answer[1] }}</label>
                                 <br>
                             {% endfor %}
-                            <input type="submit" name="submit" class="btn">
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-sm-12 text-left">
-                    <a href="/question/1">
+                        <a href="/question/1">
                         <button type="button" class="btn btn-warning btn-lg mt-2">
                             Vorige vraag.
                         </button>
-                    </a>
+                        </a>
+                    <input type="submit" name="submit" class="btn btn-warning btn-lg mt-2" value="Volgende vraag!">
+                    </form>
                 </div>
+            </div>
         </div>
         <div class="col-sm-6">
             <div class="row ml-5">
