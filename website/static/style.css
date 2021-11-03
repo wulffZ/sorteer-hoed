@@ -1,6 +1,8 @@
-button {
-    background-image: url('paper_texture.png');
-    background-size: cover;
+.btn-black {
+    background-color:#000;color: #FFF;
+}
+.btn-black:hover {
+    color: #FFF;
 }
 
 #question-col {
@@ -14,4 +16,5 @@ button {
 .card-title {
     font-size: 32px;
 }
+
 

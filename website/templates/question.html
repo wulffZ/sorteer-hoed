@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Own CSS -->
-    <link rel="stylesheet" href="static/style.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="static/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Noto+Serif+Display' rel='stylesheet'>
     <style>
@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-image: url('static/background.jpg'); background-size: auto; background-repeat: no-repeat;">
+<body style="background-image: url({{url_for('static', filename='background_white.png')}}); background-size: auto; background-repeat: no-repeat;">
 <div class="container">
     <div class="row m-4">
         <div id="question-col" class="col-sm-6">
@@ -43,18 +43,18 @@
                     </form>
                 </div>
             </div>
+            <div class="col-sm-12 text-left">
+                    <a href="/question/1">
+                        <button type="button" class="btn btn-warning btn-lg mt-2">
+                            Vorige vraag.
+                        </button>
+                    </a>
+                </div>
         </div>
         <div class="col-sm-6">
             <div class="row ml-5">
                 <div class="col-sm-12">
                     <img class="img-fluid" src="{{ url_for('static', filename='hufflepuff.png') }}"/>
-                </div>
-                <div class="col-sm-12 text-center">
-                    <a href="/question/1">
-                        <button type="button" class="btn btn-warning btn-lg mt-2">
-                            Start!
-                        </button>
-                    </a>
                 </div>
             </div>
         </div>
