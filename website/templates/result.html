@@ -25,35 +25,35 @@
 <body style="background-image: url({{url_for('static', filename='background_white.png')}}); background-size: auto; background-repeat: no-repeat;">
 <div class="container">
     <div class="row m-4">
-        <div id="question-col" class="col-sm-6">
-            <div class="card text-black border-warning bg-transparent mb-3" style="border-width:3px">
-                {% for question in questions %}
-                    <div class="card-header"><b>{{ question[1] }}</b></div>
-                {% endfor %}
-                <div class="card-body">
-                    <form action="/question/{{ question_id }}/process" method="POST">
-                        <div class="col-sm-6">
-                            {% for answer in answers %}
-                                <label><input type="checkbox" class="radio" value="{{ answer[0] }}"
-                                              name="answer"/>{{ answer[1] }}</label>
-                                <br>
-                            {% endfor %}
-                        </div>
-                        <a href="/question/1">
-                        <button type="button" class="btn btn-warning btn-lg mt-2">
-                            Vorige vraag.
-                        </button>
-                        </a>
-                    <input type="submit" name="submit" class="btn btn-warning btn-lg mt-2" value="Volgende vraag!">
-                    </form>
+        <div class="col-sm-6">
+            <div class="row m-4">
+                <div class="col-sm-12">
+                    <h2>Bedankt!</h2>
+                </div>
+                <div class="col-sm-12">
+                    <p>De studierichting informatie die het beste bij je past is: </p>
+                    <p>Meer weten? bezoek deze <a href="https://www.hsleiden.nl/informatica" target="_blank">pagina</a></p>
                 </div>
             </div>
+            <button type="button" class="btn btn-warning btn-lg ml-4">
+                            Nog een keer!
+                </button>
+                <button type="button" class="btn btn-warning btn-lg ml-4">
+                            Hoofdmenu
+                </button>
         </div>
         <div class="col-sm-6">
             <div class="row ml-5">
                 <div class="col-sm-12">
-                    <img class="img-fluid" src="{{ url_for('static', filename='hufflepuff.png') }}"/>
+                    <img class="img-fluid" src="{{ url_for('static', filename='ravenclaw.png') }}"/>
                 </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="row m-4">
+                <h2>Over ravenclaw.</h2>
+                <p>Ravenklauw representeert het element lucht, en om die reden zijn ook de afdelingskleuren gekozen; <br> blauw en brons staan respectievelijk voor de lucht en adelaarsveren, wat beiden met het element lucht te maken heeft.
+                    <br>De zandloper met afdelingspunten bevat blauwe saffieren. </p>
             </div>
         </div>
     </div>

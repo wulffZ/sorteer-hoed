@@ -11,6 +11,10 @@ def home_page():
     question_answers.clear()
     return render_template("index.html")
 
+@app.route('/result', methods=['GET'])
+def result():
+    return render_template("result.html")
+
 
 @app.route('/question/<question_id>', methods=['GET'])
 def question(question_id):
