@@ -20,7 +20,7 @@
         }
     </style>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sorting Hat</title>
 </head>
 <body style="background-image: url({{ url_for('static', filename='background_white.png') }}); background-size: auto; background-repeat: no-repeat;">
 <div class="container">
@@ -31,7 +31,7 @@
                     <h2>Bedankt!</h2>
                 </div>
                 <div class="col-sm-12">
-                    <p>De studierichting informatie die het beste bij je past is: {{ category[1] }}</p>
+                    <p>De studierichting informatica die het beste bij je past is: {{ category[1] }}</p>
                     <p>Meer weten? bezoek deze <a href="https://www.hsleiden.nl/informatica" target="_blank">pagina</a>
                     </p>
                 </div>
@@ -48,17 +48,18 @@
         <div class="col-sm-6">
             <div class="row ml-5">
                 <div class="col-sm-12">
-                    <img class="img-fluid" src="{{ url_for('static', filename='ravenclaw.png') }}"/>
+                    <img class="img-fluid" src="static/{{ category[3] }}.png"/>
                 </div>
             </div>
         </div>
         <div class="col-sm-12">
             <div class="row m-4">
-                <h2>Over ravenclaw.</h2>
-                <p>Ravenklauw representeert het element lucht, en om die reden zijn ook de afdelingskleuren gekozen;
-                    <br> blauw en brons staan respectievelijk voor de lucht en adelaarsveren, wat beiden met het element
-                    lucht te maken heeft.
-                    <br>De zandloper met afdelingspunten bevat blauwe saffieren. </p>
+                <div class="col-sm-12">
+                    <h2>Jouw zweinstein afdeling is: <b style="text-transform: capitalize;">{{ category[3] }}</b></h2>
+                </div>
+                <div class="col-sm-12">
+                    <p>{{ category[4] }}</p>
+                </div>
             </div>
         </div>
     </div>
