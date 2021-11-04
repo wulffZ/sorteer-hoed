@@ -18,15 +18,26 @@ def secrets():
 
 @app.route('/question/<question_id>', methods=['GET'])
 def question(question_id):
+    if question_id == 1:
+        question_answers.clear()
+
     database = Database()
     questions = database.get_current_question(question_id)
     answers = database.get_current_answers(question_id)
 
-    return render_template("question.html", questions=questions, answers=answers, question_id=question_id)
+    return render_template("question.html", questions=questions, answers=answers, question_id=int(question_id))
 
+
+@app.route('/question/<question_id>/back', methods=['GET'])
+def question_back(question_id):
+    del question_answers[int(question_id) - 2]
+    return redirect(f'/question/{int(question_id) - 1}')
 
 @app.route('/question/<question_id>/process', methods=['POST'])
 def process_question(question_id):
+    if len(request.form) == 1:
+        return redirect(f'/question/{question_id}')
+
     database = Database()
     question_answers.append(request.form['answer'])
     if int(question_id) + 1 < 16:
@@ -70,5 +81,7 @@ def check_highest(se, bdam, fict, iat):
         win = 'FICT'
     elif iat > se and iat > bdam and iat > fict:
         win = 'IAT'
+    else:
+        win = 'SE'
 
     return win

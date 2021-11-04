@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="static/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Noto+Serif+Display' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/jpg" href="static/favicon-96x96.png"/>
     <style>
         body {
             font-family: 'Noto Serif Display';
@@ -32,13 +33,18 @@
                 </div>
                 <div class="col-sm-12">
                     <p>De studierichting informatica die het beste bij je past is: {{ category[1] }}</p>
-                    <p>Meer weten? bezoek deze <a href="https://www.hsleiden.nl/informatica" target="_blank">pagina</a>
+                    <p>Meer weten? bezoek deze <a href="https://www.hsleiden.nl/informatica/" target="_blank">pagina</a>
+                    </p>
+                    <p>
+                        {{ category[2] }}
                     </p>
                 </div>
             </div>
-            <button type="button" class="btn btn-warning btn-lg ml-4">
-                Nog een keer!
-            </button>
+            <a href="/question/1">
+                    <button type="button" class="btn btn-warning btn-lg ml-4" value="back">
+                    Nog een keer!
+                </button>
+            </a>
             <a href="/">
                 <button type="button" class="btn btn-warning btn-lg ml-4">
                     Hoofdmenu
