@@ -1,3 +1,5 @@
+import time
+
 from website import app
 from flask import render_template, redirect, request, url_for
 from .database import Database
@@ -69,6 +71,10 @@ def result():
     category = database.get_category_info(request.args['win'])
 
     return render_template('result.html', category=category)
+
+@app.route('/exit', methods=['GET'])
+def stop():
+    return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
 
 def check_highest(se, bdam, fict, iat):
